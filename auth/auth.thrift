@@ -79,6 +79,7 @@ struct IamReq {
 
 struct IamRes {
     1: base.BaseResponse base
+    2: bool allow
 }
 
 service AuthService {
