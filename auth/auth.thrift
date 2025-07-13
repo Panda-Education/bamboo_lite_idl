@@ -72,10 +72,20 @@ struct ResetPasswordSetRes {
     1: base.BaseResponse base
 }
 
+struct IamReq {
+    1: UserRole role
+    2: string entity
+}
+
+struct IamRes {
+    1: base.BaseResponse base
+}
+
 service AuthService {
     LoginRes login(1: LoginReq req)
     RegisterRes register(1: RegisterReq req)
     ResetPasswordRes reset_password(1: ResetPasswordReq req)
     ResetPasswordVerifyRes reset_password_verify(1: ResetPasswordVerifyReq req)
     ResetPasswordSetRes reset_password_set(1: ResetPasswordSetReq req)
+    IamRes iam_lookup(1: IamReq req)
 }
